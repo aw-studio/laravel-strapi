@@ -1,0 +1,22 @@
+{
+    "name": "aw-studio/laravel-strapi",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AwStudio\\LaravelStrapi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jannes Behrens"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AwStudio\\LaravelStrapi\\StrapiServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
