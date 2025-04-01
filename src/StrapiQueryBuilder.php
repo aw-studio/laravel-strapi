@@ -83,7 +83,7 @@ class StrapiQueryBuilder
         }
 
         if (Str::startsWith($name, 'populate')) {
-            $key = Str::of($name)->after('populate')->pascal()->toString();
+            $key = Str::of($name)->after('populate')->toString();
             $components = Arr::get(config('laravel-strapi.components'), $key);
 
             foreach ($components as $component) {
