@@ -13,7 +13,8 @@ class StrapiApiClient
 
     public function __construct()
     {
-        $this->baseUrl = config('laravel-strapi.base_url');
+        // set base URL from config and remove trailing slash
+        $this->baseUrl = rtrim(config('laravel-strapi.base_url'), '/');
 
         if (! $this->baseUrl) {
             throw new \Exception('Strapi base URL is not set in the config file.');
@@ -54,7 +55,7 @@ class StrapiApiClient
     private function fetchFromStrapi(string $endpoint, array $queryParams)
     {
         $response = Http::withHeaders($this->headers)
-            ->get("{$this->baseUrl}/{$endpoint}", $queryParams);
+            ->get("{$this->baseUrl}/api/{$endpoint}", $queryParams);
 
         if ($response->failed()) {
             throw new \Exception('Error fetching data from Strapi: '.$response->body());

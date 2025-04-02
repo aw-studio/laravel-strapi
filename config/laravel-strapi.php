@@ -2,7 +2,7 @@
 
 return [
 
-    'base_url' => env('STRAPI_BASE_URL', 'http://localhost:1337/api'),
+    'base_url' => env('STRAPI_BASE_URL', 'http://localhost:1337'),
 
     'components' => [
         // 'Content' => [
